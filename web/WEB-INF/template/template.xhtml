@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <title>Dashboard</title>
+
+        <!-- Bootstrap Css -->
+        <link href="#{request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- Hoja de estilos -->
+        <link href="#{request.contextPath}/assets/css/style.css" rel="stylesheet"/>
+
+        <!-- Google fonts -->
+        <!--<link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet"/>-->
+
+        <!-- Ionic icons -->
+        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"/>
+    </h:head>
+
+    <h:body>
+
+        <div class="d-flex" id="content-wrapper">
+            <ui:insert name="sidebar">
+                <ui:include src="sidebar.xhtml"></ui:include>
+            </ui:insert>
+
+            <div id="page-content-wrapper" class="w-100 bg-light-blue">
+                <div id="content" class="container-fluid p-5">
+                    <ui:insert name="content">
+                        <ui:include src="content.xhtml"></ui:include>
+                    </ui:insert>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap y JQuery -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
+    </h:body>
+
+</html>

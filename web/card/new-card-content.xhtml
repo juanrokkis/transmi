@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+          
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+
+        <div class="col-12">
+            <h:form>
+                <div class="form-group">
+                    <label for="cardNumber">Número de Tarjeta</label>
+                    <h:inputText value="${controlador.nombres}" class="form-control" id="nombres" 
+                           html5:aria-describedby="cardHelp" html5:placeholder="Introduce el número de la tarjeta"/>
+                        <small id="nombres" class="form-text text-muted">
+                            Por favor, introduce tú nombre.
+                        </small>
+                    <h:inputText value="${controlador.apellidos}" class="form-control" id="apellidos" 
+                           html5:aria-describedby="cardHelp" html5:placeholder="Introduce el número de la tarjeta"/>
+                        <small id="apellidos" class="form-text text-muted">
+                            Por favor, introduce tú apellido tarjeta.
+                        </small>
+                    <h:selectOneMenu class="form-control" id="tarjeta" value="${controlador.serial}">
+                        <f:selectItems value="${controlador.tarjetasDisponibles}" var="t" 
+                                   itemValue="#{t.serial}" itemLabel="#{t.serial}"/>
+                    </h:selectOneMenu>                    
+                        <small id="tarjeta" class="form-text text-muted">
+                            Por favor, introduce el número de la tarjeta.
+                        </small>
+                </div>
+                <h:commandButton type="submit" class="btn btn-success w-100" value="Crear" action="${controlador.venderTarjeta()}"/>
+            </h:form>
+        </div>
+
+    </ui:composition>
+
+
+</html>
